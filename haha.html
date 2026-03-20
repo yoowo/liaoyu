@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎭 歡迎來到「歡愉」劇場！ ✨</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #2a0a2f 0%, #a01c40 100%);
+            font-family: "Microsoft JhengHei", sans-serif;
+            color: #fff;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        /* 返回按鈕樣式 */
+        .back-to-index {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            text-decoration: none;
+            color: #ffca28;
+            border: 1px solid #ffca28;
+            padding: 8px 15px;
+            border-radius: 5px;
+            font-size: 0.9rem;
+            transition: all 0.3s;
+            background: rgba(0,0,0,0.3);
+            z-index: 100;
+        }
+
+        .back-to-index:hover {
+            background: #ffca28;
+            color: #2a0a2f;
+            box-shadow: 0 0 10px #ffca28;
+        }
+
+        .stage {
+            background: rgba(0,0,0,0.6);
+            padding: 40px;
+            border-radius: 30px;
+            box-shadow: 0 15px 50px rgba(255,112,67,0.3);
+            border: 2px solid #ff7043;
+            max-width: 900px;
+            width: 90%;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: #ffca28;
+            text-shadow: 0 0 15px #ff7043;
+            margin-bottom: 30px;
+        }
+
+        /* 佈局容器：讓圖片和按鈕可以並排 */
+        .content-layout {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap; /* 手機版會自動換行 */
+        }
+
+        .image-container {
+            border: 4px solid #ffca28;
+            border-radius: 15px;
+            box-shadow: 0 0 30px rgba(255, 202, 40, 0.7);
+            animation: imagePulse 2s infinite alternate;
+            max-width: 450px;
+        }
+
+        @keyframes imagePulse {
+            from { box-shadow: 0 0 20px rgba(255, 202, 40, 0.5); border-color: #ffca28; }
+            to { box-shadow: 0 0 40px rgba(255, 202, 40, 1); border-color: #ff7043; }
+        }
+
+        .theatre-pic {
+            display: block;
+            max-width: 100%;
+            height: auto;
+            border-radius: 11px;
+        }
+
+        .joy-btn {
+            background-color: #ff7043;
+            color: #2a0a2f;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.1rem;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s;
+            box-shadow: 0 5px 20px rgba(255,112,67,0.4);
+            white-space: nowrap;
+        }
+
+        .joy-btn:hover {
+            background-color: #ffca28;
+            transform: scale(1.1) rotate(3deg);
+        }
+
+        .ai-note {
+            position: fixed;
+            bottom: 10px;
+            right: 10px;
+            font-size: 0.8rem;
+            color: rgba(255, 255, 255, 0.6);
+            pointer-events: none;
+        }
+
+        .joy-particle {
+            position: absolute;
+            font-size: 1.5rem;
+            pointer-events: none;
+            animation: floatParticle 4s linear infinite;
+            opacity: 0;
+        }
+
+        @keyframes floatParticle {
+            0% { transform: translateY(100vh) rotate(0deg); opacity: 1; }
+            100% { transform: translateY(-10vh) rotate(360deg); opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="back-to-index">⬅ 返回 Index</a>
+
+    <div class="stage">
+        <h1>🎭 「歡愉」常在！生命就是一場大馬戲！ ✨</h1>
+        
+        <div class="content-layout">
+            <div class="image-container">
+                <img src="img/火花.png" alt="Theatre Show" class="theatre-pic">
+            </div>
+            
+            <button class="joy-btn" onclick="startTheShow()">加入假面愚者！開始胡鬧！🍭💣🔥</button>
+        </div>
+    </div>
+
+    <div class="ai-note">此網頁及內容由 AI 生成</div>
+
+    <script>
+        function startTheShow() {
+            const messages = [
+                '「歡迎來到歡愉的現場！別忘了，要把笑聲帶給每一個人喔！」',
+                '「這場馬戲，才剛剛開始！」',
+                '「讓劇本變得更荒誕些吧！」'
+            ];
+            alert(messages[Math.floor(Math.random() * messages.length)]);
+
+            for(let i = 0; i < 20; i++) {
+                createParticle();
+            }
+        }
+
+        function createParticle() {
+            const symbols = ['🦊', '🎭', '🎊', '✨', '🍭', '💣', '🔥', '🃏'];
+            const particle = document.createElement('div');
+            particle.className = 'joy-particle';
+            particle.innerText = symbols[Math.floor(Math.random() * symbols.length)];
+            particle.style.left = Math.random() * 100 + 'vw';
+            particle.style.animationDuration = (Math.random() * 2 + 3) + 's';
+            document.body.appendChild(particle);
+            setTimeout(() => { particle.remove(); }, 5000);
+        }
+    </script>
+</body>
+</html>

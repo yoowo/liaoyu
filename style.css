@@ -1,3 +1,9 @@
+div{
+margin:20px 0;
+padding:35px 30px 30px 30px;
+background-color:#fbf9cc;
+}
+
 h1 {
     color: #2c3e50; /* 深藍灰色文字 */
     font-family: "Microsoft JhengHei", sans-serif; /* 字體 */
@@ -59,4 +65,33 @@ a:hover,a:active
 	padding: 40px 80px;
 	border: #f6bb9e 1px solid;
 	background-color: #fff;
+}
+
+.a { background-color: #abeee8 }
+
+#top
+{
+	position:fixed;
+	bottom:5px;
+	right:5px;
+}
+
+header nav ul {
+  display: flex;
+  justify-content: center;
+  border-top: 2px solid #7c5d48;
+  border-bottom: 2px solid #7c5d48;
+  background-color: rgba(255,255,255,0.42);
+  padding: 12px 0px 10px;
+}
+header nav ul li {
+  margin: 0 20px;
+}
+header nav ul li a {
+  font-size: 22px;
+  font-weight: bold;
+  color: #7c5d48;
+}
+header nav ul li a:hover {
+  text-decoration: underline double;
 }

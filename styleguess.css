@@ -1,0 +1,159 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Noto Sans TC', sans-serif;
+    /* 現代感的紫色漸層背景 */
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #2d3436;
+}
+
+/* 毛玻璃容器 */
+.container {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(15px); /* 背景模糊關鍵 */
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 40px;
+    border-radius: 24px;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.2);
+    width: 100%;
+    max-width: 450px;
+    text-align: center;
+}
+
+h1 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    color: #4834d4;
+    letter-spacing: 1px;
+}
+
+p {
+    font-size: 0.95rem;
+    color: #636e72;
+    margin-bottom: 25px;
+}
+
+/* 輸入區域設計 */
+.input-group {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+input[type="number"] {
+    width: 80px;
+    height: 50px;
+    border-radius: 12px;
+    border: 2px solid #dfe6e9;
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: bold;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+input[type="number"]:focus {
+    border-color: #6c5ce7;
+    box-shadow: 0 0 10px rgba(108, 92, 231, 0.2);
+}
+
+button.guessSubmit {
+    height: 50px;
+    padding: 0 25px;
+    background: #6c5ce7;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+button.guessSubmit:hover {
+    background: #a29bfe;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(108, 92, 231, 0.3);
+}
+
+/* 結果與紀錄顯示區 */
+.result-area {
+    background: rgba(255, 255, 255, 0.5);
+    padding: 20px;
+    border-radius: 16px;
+    margin-bottom: 20px;
+}
+
+.result {
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    padding: 8px;
+    border-radius: 8px;
+    transition: all 0.3s;
+}
+
+.count {
+    font-size: 0.9rem;
+    color: #2d3436;
+}
+
+.guesses {
+    margin-top: 15px;
+    font-size: 0.85rem;
+    color: #636e72;
+    word-wrap: break-word;
+    border-top: 1px dashed #ced6e0;
+    padding-top: 10px;
+}
+
+/* 重新開始按鈕 */
+.restartBtn {
+    width: 100%;
+    padding: 12px;
+    background: #00b894;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.restartBtn:hover {
+    background: #55efc4;
+}
+
+.homeBtn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 8px 16px;
+    color: #636e72;
+    text-decoration: none; /* 移除底線 */
+    font-size: 0.9rem;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
+}
+
+.homeBtn:hover {
+    color: #4834d4;
+    background: rgba(72, 52, 212, 0.1); /* 淡淡的紫色背景 */
+    border: 1px solid rgba(72, 52, 212, 0.2);
+}
+
+/* 讓返回按鈕與上面的按鈕保持一點距離 */
+.restartBtn + .homeBtn {
+    margin-top: 15px;
+}

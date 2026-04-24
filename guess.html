@@ -1,12 +1,31 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-Hant">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>猜數字</title>
-    <script src="guess.js"></script>
+    <title>猜數字遊戲 - 進階美化版</title>
+    <link rel="stylesheet" href="styleguess.css">
+    <script src="guess.js" defer></script>
 </head>
 <body>
-    
+    <div class="container">
+        <h1>Number Guess</h1>
+        <p>1 到 100 之間，挑戰 10 次內猜中！</p>
+        
+        <div class="input-group">
+            <input type="number" class="guessField" id="guessField" min="1" max="100" placeholder="?">
+            <button class="guessSubmit">猜！</button>
+        </div>
+        
+        <div class="result-area">
+            <div class="result">準備好了嗎？</div>
+            <div class="count">剩餘次數：10</div>
+            <p class="guesses">尚未有猜測紀錄</p>
+        </div>
+        
+        <button class="restartBtn" style="display: none;">再玩一局</button>
+        <a href="index.html" class="homeBtn">返回首頁</a>
+    </div>
+
 </body>
 </html>
